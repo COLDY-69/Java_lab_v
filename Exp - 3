@@ -1,0 +1,120 @@
+// Create a Parent class Account with properties(accNo,name, address, phoneNo, dob, balance) and methods(Constructor,setters and getters). Create a Derived class SavingAccount with methods(deposit() and withdraw() ). Create a main method to create the object and implement the Deposit and Withdraw method.
+class Account {
+
+    private int accNo;
+    private String name;
+    private String address;
+    private String phoneNo;
+    private String dob;
+    protected double balance;
+
+    public Account(int accNo, String name, String address, String phoneNo, String dob, double balance) {
+        this.accNo = accNo;
+        this.name = name;
+        this.address = address;
+        this.phoneNo = phoneNo;
+        this.dob = dob;
+        this.balance = balance;
+    }
+
+    // Setters
+    public void setAccNo(int accNo) {
+        this.accNo = accNo;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    // Getters
+    public int getAccNo() {
+        return accNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+
+class SavingAccount extends Account {
+
+    public SavingAccount(int accNo, String name, String address, String phoneNo, String dob, double balance) {
+        super(accNo, name, address, phoneNo, dob, balance);
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Invalid or insufficient amount.");
+        }
+    }
+
+    public void showDetails() {
+        System.out.println("Account No: " + getAccNo());
+        System.out.println("Name: " + getName());
+        System.out.println("Address: " + getAddress());
+        System.out.println("Phone No: " + getPhoneNo());
+        System.out.println("DOB: " + getDob());
+        System.out.println("Balance: " + getBalance());
+    }
+}
+
+public class AccountDetails {
+    public static void main(String[] args) {
+
+        SavingAccount acc = new SavingAccount(101, "Gaurav Boro", "Assam", "6901438579", "07-10-2004", 5000.0);
+
+        acc.showDetails();
+
+        acc.deposit(2000.0);
+
+        acc.withdraw(1500.0);
+
+        System.out.println("\nUpdated Account Details:");
+        acc.showDetails();
+    }
+}
