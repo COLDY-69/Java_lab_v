@@ -1,0 +1,72 @@
+//Create a class Customer with properties(custId,name,address,phoneNo) and methods(Constructor,setters and getters and toString method). Create 5 objects using array of objects concepts and print the object details using toString method.
+
+class Customer {
+
+    private int custId;
+    private String name;
+    private String address;
+    private String phoneNo;
+
+    public Customer(int custId, String name, String address, String phoneNo) {
+        this.custId = custId;
+        this.name = name;
+        this.address = address;
+        this.phoneNo = phoneNo;
+    }
+
+    // Setters
+    public void setCustId(int custId) {
+        this.custId = custId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    // Getters
+    public int getCustId() {
+        return custId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    // toString method
+    public String toString() {
+        return "Customer ID: " + custId + ", Name: " + name + ", Address: " + address + ", Phone No: " + phoneNo;
+    }
+}
+
+public class CustomerDetails {
+    public static void main(String[] args) {
+
+        Customer c1 = new Customer(1, "Gaurav", "Guwahati", "9876543210");
+        Customer c2 = new Customer(2, "Rohit", "Jorhat", "9123456789");
+        Customer c3 = new Customer(3, "Yassir", "Tezpur", "9988776655");
+        Customer c4 = new Customer(4, "Khimi", "Dibrugarh", "9001122334");
+        Customer c5 = new Customer(5, "Rishi", "Silchar", "9012345678");
+
+        System.out.println(c1.toString());
+        System.out.println(c2.toString());
+        System.out.println(c3.toString());
+        System.out.println(c4.toString());
+        System.out.println(c5.toString());
+    }
+}
