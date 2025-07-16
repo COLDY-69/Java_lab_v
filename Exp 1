@@ -1,0 +1,63 @@
+// Create a class Product with properties(itemNo,name,price,quantity) and methods(Constructor,setters and getters and toString method). Create 5 objects using array of objects concepts and print the object details using toString method
+class Product{
+    private int itemNo;
+    private String name;
+    private double price;
+    private int quantity;
+
+    public Product(int itemNo, String name, double price, int quantity) {
+        this.itemNo = itemNo;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    // Setters
+    public void setItemNo(int itemNo){
+        this.itemNo = itemNo;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setPrice(double price){
+        this.price = price;
+    }
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+
+    // Getters
+    public int getItemNo(){
+        return itemNo;
+    }
+    public String getName(){
+        return name;
+    }
+    public double getPrice(){
+        return price;
+    }
+    public int getQuantity(){
+        return quantity;
+    }
+
+    // tostring method
+    public String toString(){
+        return "Item No : "+ itemNo + ",Name : "+ name +",Price : "+ price +",Quantity : "+quantity;
+    }
+}
+public class ProductDetails{
+    public static void main(String[] args){
+        Product p1 = new Product(101, "Laptop", 55000, 2);
+        Product p2 = new Product(102, "Smartphone", 25000, 5);
+        Product p3 = new Product(103, "Keyboard", 1200, 10);
+        Product p4 = new Product(104, "Monitor", 8500, 4);
+        Product p5 = new Product(105, "Mouse", 600, 15);
+
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
+        System.out.println(p3.toString());
+        System.out.println(p4.toString());
+        System.out.println(p5.toString());
+
+    }
+}
